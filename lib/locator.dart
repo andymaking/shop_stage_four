@@ -10,6 +10,9 @@ import '../data/services/local/storage.service.dart';
 import '../data/services/local/theme.service.dart';
 import '../data/services/local/user.service.dart';
 import '../data/services/web/authentication.service.dart';
+import 'screens/base-vm.dart';
+import 'screens/main/bottom.nav.vm.dart';
+import 'screens/main/home/home.vm.dart';
 
 
 GetIt locator = GetIt.I;
@@ -34,8 +37,9 @@ setUpServices(){
 
 registerViewModel(){
   /* TODO Setup viewModels*/
-  // locator.registerFactory<BaseViewModel>(() => BaseViewModel());
-  // locator.registerFactory<SignUpViewModel>(() => SignUpViewModel());
+  locator.registerFactory<BaseViewModel>(() => BaseViewModel());
+  locator.registerFactory<BottomNavigationViewModel>(() => BottomNavigationViewModel());
+  locator.registerFactory<HomeViewModel>(() => HomeViewModel());
   // locator.registerFactory<HomeTabViewModel>(() => HomeTabViewModel());
   // locator.registerFactory<HomeViewModel>(() => HomeViewModel());
   // locator.registerFactory<SettingsViewModel>(() => SettingsViewModel());
