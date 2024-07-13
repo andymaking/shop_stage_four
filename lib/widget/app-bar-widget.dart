@@ -19,6 +19,7 @@ class AppBars extends StatelessWidget implements PreferredSizeWidget {
   final String? text;
   final bool? hasNotification;
   final bool? noLeading;
+  final bool centerTile;
   final Widget? flexibleSpace;
   final double? elevation;
   final SystemUiOverlayStyle? systemOverlayStyle;
@@ -34,7 +35,7 @@ class AppBars extends StatelessWidget implements PreferredSizeWidget {
     this.hasNotification,
     this.leading, this.elevation,
     this.backgroundColor, this.systemOverlayStyle,
-    this.textAppColor, this.buttonBackgroundColor, this.noLeading
+    this.textAppColor, this.buttonBackgroundColor, this.noLeading, this.centerTile = true
   }) : super(key: key);
 
   @override
@@ -53,12 +54,12 @@ class AppBars extends StatelessWidget implements PreferredSizeWidget {
       title: title??(text!=null? AppText("$text", style: Theme.of(context).textTheme.bodyLarge):null),
       flexibleSpace: flexibleSpace,
       backgroundColor: backgroundColor,
-      leadingWidth: 115.sp,
+      leadingWidth: Navigator.of(context).canPop() ? 45.sp: 115.sp,
       bottom: bottom,
       actions: actions,
       systemOverlayStyle: systemOverlayStyle,
       scrolledUnderElevation: 0.0,
-      centerTitle: true,
+      centerTitle: centerTile?? true,
       elevation: elevation,
     );
   }

@@ -69,7 +69,7 @@ class AppButton extends StatelessWidget {
           ),
           child: Padding(
               padding:
-              padding?? EdgeInsets.symmetric(horizontal: 5.0.sp, vertical: 5.sp),
+              padding?? EdgeInsets.symmetric(horizontal: 10.0.sp, vertical: 5.sp),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -89,10 +89,10 @@ class AppButton extends StatelessWidget {
                       AppText(
                         text ?? "",
                         // family: 'Inter',
-                        weight: FontWeight.w700,
-                        color: textColor!=null?(onTap==null? textColor?.withOpacity(0.3): textColor): Colors.white,
+                        weight: FontWeight.w500,
+                        color: textColor!=null?(onTap==null? textColor?.withOpacity(0.3): textColor): null,
                         align: TextAlign.center,
-                        size: textSize?? 16.sp,
+                        size: textSize?? 12.sp,
                       ),
 
                 ],

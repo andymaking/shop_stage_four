@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../widget/app-bar-widget.dart';
 import '../base-vm.dart';
+import 'cart/cart.ui.dart';
 import 'home/home.ui.dart';
 
 class BottomNavigationViewModel extends BaseViewModel {
@@ -28,9 +29,7 @@ class BottomNavigationViewModel extends BaseViewModel {
     Scaffold(
       backgroundColor: Colors.orange,
     ),
-    Scaffold(
-      backgroundColor: Colors.green,
-    ),
+    CartHomeScreen(),
 
   ];
 }
